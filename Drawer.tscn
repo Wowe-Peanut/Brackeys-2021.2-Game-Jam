@@ -6,8 +6,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 75, 40 )
 
-[node name="Drawer" type="StaticBody2D"]
-input_pickable = true
+[node name="Drawer" type="Area2D"]
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]

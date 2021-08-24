@@ -1,6 +1,6 @@
-extends StaticBody2D
+extends Area2D
 
-onready var clothing = load("res://Clothing.tscn")
+onready var clothing = preload("res://FoldedClothing.tscn")
 
 var opened = false
 var open_offset = Vector2(28, 10)
@@ -12,7 +12,7 @@ func _ready():
 	
 func populate():
 	randomize()
-	for i in range(rand_range(1, 5)):
+	for i in range(rand_range(1, 4)):
 		var n = clothing.instance()
 		contents.append(n)
 		add_child(n)

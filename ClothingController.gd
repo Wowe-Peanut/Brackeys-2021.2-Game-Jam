@@ -10,9 +10,29 @@ func _ready():
 
 func _on_Clothing_input_event(viewport, event, shape_idx):
 	if event.is_action_pressed("click"):
-		held = true
+		pickup()
+
+func _input(event):
+	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT:
+		if !event.pressed:
+			drop(Input.get_last_mouse_speed())
+		
+
+
+
 		
 func _physics_process(delta):
-	if(held):
-		position = get_global_mouse_position()
-		
+	if held:
+		global_transform.origin = get_global_mouse_position()
+
+func pickup():
+	if held:
+		return
+	mode = RigidBody2D.MODE_STATIC
+	held = true
+
+func drop(impulse=Vector2.ZERO):
+	if held:
+		mode = RigidBody2D.MODE_RIGID
+		apply_central_impulse(impulse)
+		held = false

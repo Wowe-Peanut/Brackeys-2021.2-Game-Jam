@@ -1,25 +1,27 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://ClothingController.gd" type="Script" id=1]
-[ext_resource path="res://Assets/TempFoldedClothing.png" type="Texture" id=2]
+[ext_resource path="res://Assets/TempLooseClothing.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 46.9301, 50.9272 )
 
 [node name="Clothing" type="RigidBody2D"]
 z_index = 3
 input_pickable = true
 collision_layer = 2
 collision_mask = 2
-gravity_scale = 0.0
-sleeping = true
 script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0.172523, -0.345043 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 2 )
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
 show_behind_parent = true
+position = Vector2( -0.172516, 0.17252 )
+scale = Vector2( 1, 1 )
 shape = SubResource( 1 )
-
-[node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 0.2, 0.2 )
-texture = ExtResource( 2 )
 
 [connection signal="input_event" from="." to="." method="_on_Clothing_input_event"]
