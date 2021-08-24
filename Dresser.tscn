@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Drawer.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/TempDresser.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[node name="Dresser" type="StaticBody2D"]
+position = Vector2( 506.381, 265.096 )
+
+[node name="Hitbox (Disabled atm)" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+disabled = true
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 2 )
+
+[node name="Drawer" parent="." instance=ExtResource( 1 )]
+position = Vector2( 11.1782, -86.1449 )
+z_index = 2
+
+[node name="Drawer2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 11.3746, 1.06073 )
+z_index = 1
+
+[node name="Drawer3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 11.8921, 89.1905 )
