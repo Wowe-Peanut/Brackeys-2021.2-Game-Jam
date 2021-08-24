@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Drawer.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Assets/TempDresser.png" type="Texture" id=2]
+[ext_resource path="res://Assets/dresser.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -13,8 +13,10 @@ shape = SubResource( 1 )
 disabled = true
 
 [node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 0.2, 0.2 )
+position = Vector2( -223.049, -293.131 )
 texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 73.1484, 113.007, 486.118, 769.368 )
 
 [node name="Drawer" parent="." instance=ExtResource( 1 )]
 position = Vector2( 11.1782, -86.1449 )

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Assets/TempDrawerClosed.png" type="Texture" id=1]
+[ext_resource path="res://Assets/dresser.png" type="Texture" id=1]
 [ext_resource path="res://DrawerController.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -12,6 +12,8 @@ script = ExtResource( 2 )
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 596.725, 196.126, 335.25, 207.215 )
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
 position = Vector2( -0.511292, -0.46524 )
