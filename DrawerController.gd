@@ -31,12 +31,14 @@ func open():
 	$Sprite.texture = load("res://Assets/TempDrawerOpen.png")
 	opened = !opened
 	position += open_offset
+	$Hitbox.position += open_offset
 	show_contents()
 	
 func close():
 	$Sprite.texture = load("res://Assets/TempDrawerClosed.png")
 	opened = !opened
 	position -= open_offset
+	$Hitbox.position -= open_offset
 	hide_contents()
 	
 func show_contents():
