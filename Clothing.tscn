@@ -4,7 +4,7 @@
 [ext_resource path="res://Assets/clothing.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 91.0724, 65.1011 )
+extents = Vector2( 46.9301, 50.9272 )
 
 [node name="Clothing" type="RigidBody2D"]
 z_index = 3

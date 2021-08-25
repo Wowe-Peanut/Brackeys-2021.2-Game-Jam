@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/MasonBop.mp3-f0f94da4e21bfa159a9771169ddd72ba.mp3str"
+
+[deps]
+
+source_file="res://Assets/MasonBop.mp3"
+dest_files=[ "res://.import/MasonBop.mp3-f0f94da4e21bfa159a9771169ddd72ba.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
