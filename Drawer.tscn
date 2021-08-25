@@ -16,6 +16,7 @@ region_enabled = true
 region_rect = Rect2( 596.725, 196.126, 335.25, 207.215 )
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2( -0.511292, -0.46524 )
 shape = SubResource( 1 )
 

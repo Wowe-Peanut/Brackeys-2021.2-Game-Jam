@@ -38,9 +38,13 @@ func close():
 	
 func show_contents():
 	for c in contents:
-		c.show()
+		if(is_instance_valid(c)):
+			c.show()
 
 func hide_contents():
 	for c in contents:
-		c.hide()
+		if(is_instance_valid(c)):
+			c.hide()
 
+func remove_clothing():
+	pass
