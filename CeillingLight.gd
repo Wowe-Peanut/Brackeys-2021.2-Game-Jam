@@ -18,9 +18,7 @@ func _input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT:
 		if not on:
 			sprite.region_rect.position.y = 520
-			print("ON")
 			on = true
 		else:
 			sprite.region_rect.position.y = 70
-			print("OFF")
 			on = false

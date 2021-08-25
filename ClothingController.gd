@@ -3,7 +3,7 @@ extends RigidBody2D
 onready var hitbox = $Hitbox
 
 var held = false
-var offset
+var offset = Vector2.ZERO
 
 func _ready():
 	held = true
@@ -18,11 +18,14 @@ func _on_Clothing_input_event(viewport, event, shape_idx):
 		
 func _physics_process(delta):
 	if held:
-		global_transform.origin = get_global_mouse_position()
+		global_transform.origin = get_global_mouse_position() + offset
+	if(Input.is_action_just_released("click")):
+		held = false
 
 func pickup():
 	mode = RigidBody2D.MODE_STATIC
 	held = true
+	offset = global_position - get_global_mouse_position()
 
 func drop(impulse=Vector2.ZERO):
 	if held:
