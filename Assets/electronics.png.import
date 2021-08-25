@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/TempDesk.png-ded8bdab341e0f8f4734fe44175cf16c.stex"
+path="res://.import/electronics.png-269604f36cbd75c4058f1f0f8388837f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/TempDesk.png"
-dest_files=[ "res://.import/TempDesk.png-ded8bdab341e0f8f4734fe44175cf16c.stex" ]
+source_file="res://Assets/electronics.png"
+dest_files=[ "res://.import/electronics.png-269604f36cbd75c4058f1f0f8388837f.stex" ]
 
 [params]
 
