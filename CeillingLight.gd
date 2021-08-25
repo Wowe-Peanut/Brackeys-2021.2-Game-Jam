@@ -22,6 +22,8 @@ func _input_event(viewport, event, shape_idx):
 
 	if event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT:
 		if not exploded:
+			flicker_uncontrollably()
+
 			if not on:
 				on()
 				clicked += 1
@@ -32,8 +34,8 @@ func _input_event(viewport, event, shape_idx):
 				on = false
 		elif clicked > 5:
 			exploded = true
-			flicker_uncontrollably()
-			explode()
+			
+			
 			
 		
 			
@@ -55,8 +57,9 @@ func flicker_uncontrollably():
 		else:
 			off()
 			on = false
+	explode()
 			
 			
 func explode():
-	sprite.region_rect.position.y = 50
-	sprite.position -= light_offset
+	sprite.region_rect.position.y = 300
+	sprite.region_rect.position.x = 285
