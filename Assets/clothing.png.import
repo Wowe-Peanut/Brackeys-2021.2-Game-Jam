@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/TempLooseClothing.png-26e0fb0820cc6ccedc9f9a300b9f456d.stex"
+path="res://.import/clothing.png-764bebccea6a541beaf53c1a8a115d7a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/TempLooseClothing.png"
-dest_files=[ "res://.import/TempLooseClothing.png-26e0fb0820cc6ccedc9f9a300b9f456d.stex" ]
+source_file="res://Assets/clothing.png"
+dest_files=[ "res://.import/clothing.png-764bebccea6a541beaf53c1a8a115d7a.stex" ]
 
 [params]
 

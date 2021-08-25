@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Assets/TempFoldedClothing.png" type="Texture" id=1]
+[ext_resource path="res://Assets/clothing.png" type="Texture" id=1]
 [ext_resource path="res://FoldedClothing.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -14,7 +14,9 @@ script = ExtResource( 2 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 0.065, 0.065 )
+scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 91.494, 116.587, 228.255, 107.479 )
 
 [connection signal="input_event" from="." to="." method="_on_FoldedClothing_input_event"]

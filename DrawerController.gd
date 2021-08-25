@@ -3,22 +3,21 @@ extends Area2D
 onready var clothing = preload("res://FoldedClothing.tscn")
 
 var opened = false
-var open_offset = Vector2(28, 10)
 var contents = []
-var clothing_offset = Vector2(-55, -42)
+var clothing_offset = Vector2(-65, -60)
 
 func _ready():
 	populate()
 	
 func populate():
 	randomize()
-	for i in range(rand_range(1, 4)):
+	for i in range(3):
 		var n = clothing.instance()
 		contents.append(n)
 		add_child(n)
 		n.hide()
 		n.position += clothing_offset
-		n.position.x += i * 32
+		n.position.x += i * 64
 
 func _on_Drawer_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT:
@@ -28,17 +27,13 @@ func _on_Drawer_input_event(viewport, event, shape_idx):
 			open()
 
 func open():
-	$Sprite.texture = load("res://Assets/TempDrawerOpen.png")
 	opened = !opened
-	position += open_offset
-	$Hitbox.position += open_offset
+	$Sprite.scale = Vector2(0.65, 0.65)
 	show_contents()
 	
 func close():
-	$Sprite.texture = load("res://Assets/TempDrawerClosed.png")
 	opened = !opened
-	position -= open_offset
-	$Hitbox.position -= open_offset
+	$Sprite.scale = Vector2(0.5, 0.5)
 	hide_contents()
 	
 func show_contents():

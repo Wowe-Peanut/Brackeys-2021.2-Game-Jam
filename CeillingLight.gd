@@ -1,5 +1,7 @@
 extends StaticBody2D
 
+onready var sprite = $Sprite
+
 var on = false
 
 
@@ -15,19 +17,10 @@ func _ready():
 func _input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT:
 		if not on:
-			get_node("Sprite").texture = load("res://Assets/Yellow_Circle.png")
+			sprite.region_rect.position.y = 520
 			print("ON")
 			on = true
 		else:
-			get_node("Sprite").texture = load("res://Assets/Blue_Circle.png")
+			sprite.region_rect.position.y = 70
 			print("OFF")
 			on = false
-
-#func _on_CeillingLight_input_event(viewport, event, shape_idx):
-#	if event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT:
-#		if not on:
-#			$CeillingLight.texture = load("res://Assests/Yellow_Circle.png")
-#			print("ON")
-#		else:
-#			$CeillingLight.texture = load("res://Assests/Blue_Circle.png")
-#			print("OFF")

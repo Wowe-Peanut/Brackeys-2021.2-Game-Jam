@@ -6,25 +6,23 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 [node name="Dresser" type="StaticBody2D"]
-position = Vector2( 506.381, 265.096 )
 
 [node name="Hitbox (Disabled atm)" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 disabled = true
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( -223.049, -293.131 )
+scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 73.1484, 113.007, 486.118, 769.368 )
 
 [node name="Drawer" parent="." instance=ExtResource( 1 )]
-position = Vector2( 11.1782, -86.1449 )
+position = Vector2( 0, -100 )
 z_index = 2
 
 [node name="Drawer2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 11.3746, 1.06073 )
 z_index = 1
 
 [node name="Drawer3" parent="." instance=ExtResource( 1 )]
-position = Vector2( 11.8921, 89.1905 )
+position = Vector2( 0, 100 )

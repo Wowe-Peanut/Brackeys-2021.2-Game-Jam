@@ -5,3 +5,4 @@
 [node name="Room" type="Node2D"]
 
 [node name="Dresser" parent="." instance=ExtResource( 1 )]
+position = Vector2( 901.934, 404.439 )
