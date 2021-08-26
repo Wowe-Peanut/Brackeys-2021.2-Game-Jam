@@ -1,24 +1,30 @@
 extends Area2D
 
-onready var clothing = preload("res://FoldedClothing.tscn")
+onready var folded_clothing = preload("res://FoldedClothing.tscn")
 
 var opened = false
 var contents = []
 var clothing_offset = Vector2(-65, -60)
 
-func _ready():
-	populate()
-	
-func populate():
-	randomize()
-	for i in range(3):
-		var n = clothing.instance()
-		contents.append(n)
-		add_child(n)
-		n.hide()
-		n.position += clothing_offset
-		n.position.x += i * 64
 
+	
+func populate(Contents):
+	if Contents == "Clothing":
+		randomize()
+		for i in range(rand_range(0, 3)):
+			var n = folded_clothing.instance()
+			contents.append(n)
+			add_child(n)
+			n.hide()
+			n.position += clothing_offset
+			n.position.x += i * 64
+			
+			
+	elif Contents == "Ball":
+		pass
+	else:
+		pass
+	
 func _on_Drawer_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT:
 		if opened:
