@@ -4,23 +4,23 @@ onready var hitbox = $Hitbox
 
 var held = false
 var offset = Vector2.ZERO
+signal clicked
+
+
 
 func _ready():
-	held = true
-	pass
-
+	self.connect("clicked", Global, "_on_pickable_clicked")
+	emit_signal("clicked", self)
+	
 func _on_Clothing_input_event(viewport, event, shape_idx):
-	if event.is_action_pressed("click"):
-		pickup()
-	if event.is_action_released("click"):
-		drop(Input.get_last_mouse_speed())
-		pass
+	if Input.is_action_just_pressed("click"):
+		emit_signal("clicked", self)
+	
 		
 func _physics_process(delta):
 	if held:
 		global_transform.origin = get_global_mouse_position() + offset
-	if(Input.is_action_just_released("click")):
-		held = false
+	
 
 func pickup():
 	mode = RigidBody2D.MODE_STATIC
@@ -32,3 +32,6 @@ func drop(impulse=Vector2.ZERO):
 		mode = RigidBody2D.MODE_RIGID
 		apply_central_impulse(impulse)
 		held = false
+
+func _on_Clothing_clicked():
+	pass # Replace with function body.

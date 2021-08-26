@@ -4,12 +4,10 @@
 [ext_resource path="res://Assets/dresser.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 100.695, 6.91072 )
 
 [node name="Dresser" type="StaticBody2D"]
-
-[node name="Hitbox (Disabled atm)" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
-disabled = true
+collision_mask = 4
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 0.5, 0.5 )
@@ -26,3 +24,8 @@ z_index = 1
 
 [node name="Drawer3" parent="." instance=ExtResource( 1 )]
 position = Vector2( 0, 100 )
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+position = Vector2( -7.7782, -175.362 )
+shape = SubResource( 1 )
+one_way_collision = true
