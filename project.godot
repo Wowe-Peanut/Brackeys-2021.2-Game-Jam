@@ -18,6 +18,11 @@ config/icon="res://icon.png"
 
 Global="*res://Global.tscn"
 
+[debug]
+
+gdscript/warnings/unused_variable=false
+gdscript/warnings/unused_argument=false
+
 [display]
 
 window/stretch/mode="viewport"
