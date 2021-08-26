@@ -7,24 +7,28 @@ var held = false
 var offset = Vector2.ZERO
 signal clicked
 
-
+var type = ""
 
 func _ready():
 	self.connect("clicked", Global, "_on_pickable_clicked")
 	emit_signal("clicked", self)
+	randomize()
+	var a = int(rand_range(0, 4))
+	if a == 0:
+		sprite.region_rect = Rect2(54, 535, 480, 365)
+		type = "Shirt"
+	elif a == 1:
+		sprite.region_rect = Rect2(550, 550, 380, 400)
+		type = "Pants"
+	elif a == 2:
+		sprite.region_rect = Rect2(190, 300, 210, 230)
+		type = "Socks"
+	elif a == 3:
+		sprite.region_rect = Rect2(470, 360, 300, 200)
+		type = "Underwear"
 	
-func SetType(Type):
-	"""
-	match Type:
-		"Shirt":
-			sprite.region_rect = Rect2(61, 54, 46, 32)
-		"Pants":
-			sprite.region_rect = Rect2(55, 55, 38, 40)
-		"Socks":
-			sprite.region_rect = Rect2(19, 30, 21, 23)
-		"Underwear":
-			sprite.region_rect = Rect2(47, 36, 30, 20)
-	"""
+			
+	
 
 
 func _on_Clothing_input_event(viewport, event, shape_idx):

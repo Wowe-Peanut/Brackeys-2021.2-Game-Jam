@@ -11,7 +11,7 @@ var clothing_offset = Vector2(-65, -60)
 func populate(Contents):
 	if Contents == "Clothing":
 		randomize()
-		for i in range(rand_range(0, 3)):
+		for i in range(3):
 			var n = folded_clothing.instance()
 			contents.append(n)
 			add_child(n)
