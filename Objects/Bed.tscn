@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/bed.png" type="Texture" id=1]
+
+[node name="Bed" type="StaticBody2D"]
+collision_layer = 6
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 70.3943, 720.418, 751.147, 265.492 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2( 0.6, 0.6 )
+polygon = PoolVector2Array( 336.941, -122.974, 338.812, 97.7767, -349.632, 110.872, -357.115, -109.879, -299.121, -119.233, -295.379, -44.4019, 278.947, -55.6265, 278.947, -122.974 )
