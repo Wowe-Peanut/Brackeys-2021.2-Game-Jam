@@ -7,6 +7,7 @@
 extents = Vector2( 75, 40 )
 
 [node name="Drawer" type="Area2D"]
+collision_mask = 0
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]

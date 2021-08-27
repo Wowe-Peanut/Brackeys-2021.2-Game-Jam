@@ -21,10 +21,6 @@ func _ready():
 	elif clothing_type == "Underwear":
 		sprite.region_rect = Rect2(470, 360, 300, 200)
 	
-	
-	
-
-
 func _on_Clothing_input_event(viewport, event, shape_idx):
 	if Input.is_action_just_pressed("click"):
 		emit_signal("clicked", self)
