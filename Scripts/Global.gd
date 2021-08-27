@@ -3,12 +3,16 @@ extends Node2D
 onready var AudioPlayer = $AudioStreamPlayer
 var held_object = null
 
+var MessyThings = 0
 
 func _ready():
 	#AudioPlayer.play()
 	pass
 
-
+func UpMess():
+	MessyThings += 1
+	print(MessyThings)
+ 
 
 #Makes it so that only 1 object is picked up at a time
 #Functions can be extended to other objects we wanna pickup (look at clothing.tscn for example)

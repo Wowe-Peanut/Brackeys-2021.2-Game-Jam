@@ -27,6 +27,7 @@ shape = SubResource( 1 )
 
 [node name="CeillingLight" parent="." instance=ExtResource( 2 )]
 position = Vector2( 311.648, 106.38 )
+z_index = 1
 
 [node name="Desk" parent="." instance=ExtResource( 3 )]
 position = Vector2( 621, 479 )
