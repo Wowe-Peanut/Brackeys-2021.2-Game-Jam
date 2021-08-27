@@ -4,7 +4,6 @@ onready var sprite = $Sprite
 
 var on = false
 var exploded = false
-var light_offset = Vector2(-1, 3)
 var clicked = 0
 
 func _input_event(viewport, event, shape_idx):
@@ -25,12 +24,10 @@ func _input_event(viewport, event, shape_idx):
 		
 			
 func on():
-	sprite.region_rect.position.y = 600
-	sprite.position += light_offset
+	sprite.region_rect.position.x = 1580
 	
 func off():
-	sprite.region_rect.position.y = -2
-	sprite.position -= light_offset
+	sprite.region_rect.position.x = 820
 			
 func flicker_uncontrollably():
 	$Hitbox.disabled = true
@@ -46,6 +43,5 @@ func flicker_uncontrollably():
 	explode()
 					
 func explode():
-	sprite.region_rect.position.y = 300
-	sprite.region_rect.position.x = 285
+	sprite.region_rect.position.x = 41
 	

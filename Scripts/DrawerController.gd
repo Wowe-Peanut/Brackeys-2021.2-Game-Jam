@@ -1,6 +1,6 @@
 extends Area2D
 
-onready var folded_clothing = preload("res://FoldedClothing.tscn")
+onready var folded_clothing = preload("res://Objects/FoldedClothing.tscn")
 
 var opened = false
 var contents = []

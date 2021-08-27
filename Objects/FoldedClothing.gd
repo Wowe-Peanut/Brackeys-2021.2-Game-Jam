@@ -1,6 +1,6 @@
 extends Area2D
 
-onready var clothing_prefab  = preload("res://Clothing.tscn")
+onready var clothing_prefab  = preload("res://Objects/Clothing.tscn")
 onready var sprite = $Sprite
 
 var clothing
