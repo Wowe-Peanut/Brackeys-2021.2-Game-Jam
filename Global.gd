@@ -5,7 +5,7 @@ var held_object = null
 
 
 func _ready():
-	AudioPlayer.play()
+	#AudioPlayer.play()
 	pass
 
 

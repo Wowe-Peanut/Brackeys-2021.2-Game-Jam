@@ -17,6 +17,6 @@ shape = SubResource( 1 )
 scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 91.494, 116.587, 228.255, 107.479 )
+region_rect = Rect2( 420, 116, 228.255, 107.479 )
 
 [connection signal="input_event" from="." to="." method="_on_FoldedClothing_input_event"]
