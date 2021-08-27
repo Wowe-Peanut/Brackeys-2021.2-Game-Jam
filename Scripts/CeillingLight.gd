@@ -1,10 +1,13 @@
-extends StaticBody2D
+extends Area2D
 
 onready var sprite = $Sprite
 
 var on = false
 var exploded = false
 var clicked = 0
+
+
+
 
 func _input_event(viewport, event, shape_idx):
 	if Input.is_action_just_pressed("click"):
@@ -20,7 +23,10 @@ func _input_event(viewport, event, shape_idx):
 		if clicked > 10:
 			flicker_uncontrollably()
 			
-			
+func _process(delta):
+	if on:
+		yield(get_tree().create_timer(rand_range(.05, .1)), "timeout")
+		sprite.flip_h = !sprite.flip_h
 		
 			
 func on():
@@ -43,5 +49,7 @@ func flicker_uncontrollably():
 	explode()
 					
 func explode():
+	on = false
 	sprite.region_rect.position.x = 41
+	Global.UpMess()
 	
