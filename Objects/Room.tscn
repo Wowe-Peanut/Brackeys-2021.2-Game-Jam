@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Objects/Dresser.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/CeilingLight.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Objects/Ball.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Objects/Bed.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Objects/Window.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/background_texture.png" type="Texture" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 554.777, 16.5902 )
@@ -40,3 +41,10 @@ position = Vector2( 220.881, 516.297 )
 
 [node name="Window" parent="." instance=ExtResource( 7 )]
 position = Vector2( 218.249, 286.055 )
+
+[node name="Background" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.490196 )
+position = Vector2( 513.84, 303.007 )
+scale = Vector2( 0.991723, 0.592355 )
+z_index = -5
+texture = ExtResource( 8 )
