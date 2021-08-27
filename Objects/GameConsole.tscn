@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/electronics.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/ConsoleController.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 49.7898, 140.817 )
+
+[node name="GameConsole" type="RigidBody2D"]
+input_pickable = true
+gravity_scale = 35.0
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 151, 550, 114.899, 318 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2( 0.6, 0.6 )
+shape = SubResource( 1 )
+
+[node name="Wire" type="Node2D" parent="."]
+show_behind_parent = true
+z_index = -1
+
+[connection signal="input_event" from="." to="." method="_on_GameConsole_input_event"]

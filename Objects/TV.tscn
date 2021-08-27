@@ -13,7 +13,7 @@ script = ExtResource( 2 )
 scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 16.903, 16.4415, 535.987, 450.284 )
+region_rect = Rect2( 20.1275, 19.6554, 525.438, 424.515 )
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
 position = Vector2( -3.14981, -17.6389 )
