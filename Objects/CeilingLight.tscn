@@ -8,6 +8,8 @@ extents = Vector2( 364.241, 177.167 )
 
 [node name="CeillingLight" type="Area2D"]
 scale = Vector2( 3, 3 )
+collision_layer = 4
+collision_mask = 4
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -21,3 +23,5 @@ position = Vector2( -2.47893, -11.9033 )
 scale = Vector2( 0.16, 0.16 )
 z_index = 1
 shape = SubResource( 1 )
+
+[connection signal="body_entered" from="." to="." method="_on_CeillingLight_body_entered"]

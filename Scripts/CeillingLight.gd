@@ -53,3 +53,11 @@ func explode():
 	sprite.region_rect.position.x = 41
 	Global.UpMess()
 	
+
+
+func _on_CeillingLight_body_entered(body):
+	if body.name == "Clothing" && on:
+		body.queue_free()
+		Global.UpMess()
+		pass
+
