@@ -32,7 +32,7 @@ position = Vector2( 621, 479 )
 [node name="TV" parent="." instance=ExtResource( 4 )]
 position = Vector2( 902.103, 156.23 )
 
-[node name="RigidBody2D" parent="." instance=ExtResource( 5 )]
+[node name="Ball" parent="." instance=ExtResource( 5 )]
 position = Vector2( 673.665, 333.984 )
 
 [node name="Bed" parent="." instance=ExtResource( 6 )]

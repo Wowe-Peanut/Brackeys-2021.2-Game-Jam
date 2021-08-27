@@ -6,7 +6,7 @@
 [sub_resource type="CircleShape2D" id=1]
 radius = 24.5037
 
-[node name="RigidBody2D" type="RigidBody2D"]
+[node name="Ball" type="RigidBody2D"]
 input_pickable = true
 collision_layer = 4
 collision_mask = 2
