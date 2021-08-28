@@ -21,7 +21,6 @@ region_rect = Rect2( 1580, 28, 750, 500 )
 [node name="Hitbox" type="CollisionShape2D" parent="."]
 position = Vector2( -2.47893, -11.9033 )
 scale = Vector2( 0.16, 0.16 )
-z_index = 1
 shape = SubResource( 1 )
 
 [connection signal="body_entered" from="." to="." method="_on_CeillingLight_body_entered"]

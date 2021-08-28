@@ -2,7 +2,7 @@ extends Area2D
 
 onready var sprite = $Sprite
 
-var on = false
+var on = true
 var exploded = false
 var clicked = 0
 
@@ -23,10 +23,7 @@ func _input_event(viewport, event, shape_idx):
 		if clicked > 10:
 			flicker_uncontrollably()
 			
-func _process(delta):
-	if on:
-		yield(get_tree().create_timer(rand_range(.05, .1)), "timeout")
-		sprite.flip_h = !sprite.flip_h
+
 		
 			
 func on():
@@ -53,8 +50,6 @@ func explode():
 	sprite.region_rect.position.x = 41
 	Global.UpMess()
 	
-
-
 func _on_CeillingLight_body_entered(body):
 	if body.name == "Clothing" && on:
 		body.queue_free()

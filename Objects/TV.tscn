@@ -7,6 +7,10 @@
 extents = Vector2( 99.7233, 65.2745 )
 
 [node name="TV" type="RigidBody2D"]
+input_pickable = true
+collision_layer = 4
+collision_mask = 2
+gravity_scale = 35.0
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -18,3 +22,5 @@ region_rect = Rect2( 20.1275, 19.6554, 525.438, 424.515 )
 [node name="Hitbox" type="CollisionShape2D" parent="."]
 position = Vector2( -3.14981, -17.6389 )
 shape = SubResource( 1 )
+
+[connection signal="input_event" from="." to="." method="_on_TV_input_event"]

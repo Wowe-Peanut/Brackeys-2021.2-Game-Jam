@@ -41,3 +41,4 @@ func _on_GameConsole_input_event(viewport, event, shape_idx):
 func _draw():
 	if not tv_broken:
 		draw_line(global_position - position, tv.global_position - global_position, Color.black, 3)
+

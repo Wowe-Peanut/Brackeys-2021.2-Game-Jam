@@ -48,9 +48,8 @@ position = Vector2( 218.249, 286.055 )
 position = Vector2( 699.254, 336.546 )
 
 [node name="Background" type="Sprite" parent="."]
-visible = false
 modulate = Color( 1, 1, 1, 0.490196 )
-position = Vector2( 509.083, 304.196 )
+position = Vector2( 506.563, 304.196 )
 scale = Vector2( 0.991723, 0.592355 )
 z_index = -5
 texture = ExtResource( 8 )
