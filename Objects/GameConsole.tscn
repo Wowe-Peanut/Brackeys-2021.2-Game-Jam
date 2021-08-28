@@ -4,7 +4,7 @@
 [ext_resource path="res://Scripts/ConsoleController.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 49.7898, 140.817 )
+extents = Vector2( 62.8736, 155.955 )
 
 [node name="GameConsole" type="RigidBody2D"]
 input_pickable = true
