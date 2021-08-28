@@ -49,15 +49,15 @@ func explode():
 	Global.UpMess()
 	
 func _on_CeillingLight_body_entered(body):
-	hits += 1
-	if hits >= 5:
-		explode()
-		body.queue_free()
-		Global.UpMess()
-	else:
-		randomize()
-		body.global_rotation = 0
-		body.linear_velocity = Vector2(0, 0)
-		body.apply_central_impulse(Vector2(1000, 0))
+	if on:
+		hits += 1
+		if hits >= 5:
+			explode()
+			body.queue_free()
+			Global.UpMess()
+		else:
+			randomize()
+			body.linear_velocity = Vector2(0, 0)
+			body.apply_central_impulse(Vector2(1000, 0))
 
 
