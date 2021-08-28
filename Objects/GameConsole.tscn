@@ -21,8 +21,9 @@ region_rect = Rect2( 151, 550, 114.899, 318 )
 scale = Vector2( 0.6, 0.6 )
 shape = SubResource( 1 )
 
-[node name="Wire" type="Node2D" parent="."]
-show_behind_parent = true
-z_index = -1
+[node name="Wire" type="Line2D" parent="."]
+points = PoolVector2Array( 615.042, 37.909 )
+width = 3.0
+default_color = Color( 0, 0, 0, 1 )
 
 [connection signal="input_event" from="." to="." method="_on_GameConsole_input_event"]

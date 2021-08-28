@@ -12,16 +12,20 @@ func _ready():
 	self.connect("clicked", Global, "_on_pickable_clicked")
 	tv = get_tree().get_root().get_node("Room/TV")
 
-
 func _physics_process(delta):
 	if held:
 		global_transform.origin = get_global_mouse_position() + offset
-		if not tv_broken and global_position.distance_to(tv.global_position) > 400:
+		if not tv_broken and global_position.distance_to(tv.global_position) > 500:
 			tv.break_self()
+			$Wire.clear_points()
 			tv_broken = true
 			
 func _process(delta):
-	update()
+	$Wire.global_rotation = 0
+	if not tv_broken:
+		$Wire.clear_points()
+		$Wire.add_point(Vector2(0, 0))
+		$Wire.add_point(tv.global_position - global_position + Vector2(0, 50))
 	
 func pickup():
 	mode = RigidBody2D.MODE_STATIC
@@ -38,7 +42,5 @@ func _on_GameConsole_input_event(viewport, event, shape_idx):
 	if Input.is_action_just_pressed("click"):
 		emit_signal("clicked", self)
 		
-func _draw():
-	if not tv_broken:
-		draw_line(Vector2(0, 0), tv.global_position - global_position, Color.black, 3)
+
 
