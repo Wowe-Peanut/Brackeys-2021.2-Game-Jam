@@ -56,6 +56,8 @@ func _on_CeillingLight_body_entered(body):
 		Global.UpMess()
 	else:
 		randomize()
-		#body.apply_central_impulse()
+		body.global_rotation = 0
+		body.linear_velocity = Vector2(0, 0)
+		body.apply_central_impulse(Vector2(1000, 0))
 
 
