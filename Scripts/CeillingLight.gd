@@ -4,7 +4,8 @@ onready var sprite = $Sprite
 
 var on = true
 var exploded = false
-var clicked = 0
+var clicks = 0 #How many times its been turned on/off
+var hits = 0 #How many things have been thrown at it
 
 
 
@@ -13,19 +14,16 @@ func _input_event(viewport, event, shape_idx):
 	if Input.is_action_just_pressed("click"):
 		if not on:
 			on()
-			clicked += 1
+			clicks += 1
 			on = true
 		else:
 			off()
-			clicked += 1
+			clicks += 1
 			on = false
 				
-		if clicked > 10:
+		if clicks > 10:
 			flicker_uncontrollably()
-			
-
-		
-			
+				
 func on():
 	sprite.region_rect.position.x = 1580
 	
@@ -51,8 +49,13 @@ func explode():
 	Global.UpMess()
 	
 func _on_CeillingLight_body_entered(body):
-	if body.name == "Clothing" && on:
+	hits += 1
+	if hits >= 5:
+		explode()
 		body.queue_free()
 		Global.UpMess()
-		pass
+	else:
+		randomize()
+		#body.apply_central_impulse()
+
 

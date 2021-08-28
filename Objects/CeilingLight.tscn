@@ -4,7 +4,7 @@
 [ext_resource path="res://Scripts/CeillingLight.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 364.241, 177.167 )
+extents = Vector2( 380.703, 130.356 )
 
 [node name="CeillingLight" type="Area2D"]
 scale = Vector2( 3, 3 )
@@ -19,7 +19,7 @@ region_enabled = true
 region_rect = Rect2( 1580, 28, 750, 500 )
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
-position = Vector2( -2.47893, -11.9033 )
+position = Vector2( -3.42281, -12.5326 )
 scale = Vector2( 0.16, 0.16 )
 shape = SubResource( 1 )
 
