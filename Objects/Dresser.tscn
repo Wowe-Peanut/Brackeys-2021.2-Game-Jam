@@ -8,6 +8,7 @@
 extents = Vector2( 100.695, 6.91072 )
 
 [node name="Dresser" type="StaticBody2D"]
+input_pickable = true
 collision_mask = 4
 script = ExtResource( 3 )
 

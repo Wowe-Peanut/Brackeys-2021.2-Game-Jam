@@ -22,37 +22,13 @@ size = 100
 font_data = ExtResource( 11 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 164
+size = 140
+outline_size = 5
+outline_color = Color( 0.709804, 0.137255, 0.137255, 1 )
 font_data = ExtResource( 11 )
 
 [node name="Room" type="Node2D"]
 script = ExtResource( 10 )
-
-[node name="Dresser" parent="." instance=ExtResource( 1 )]
-position = Vector2( 906.429, 404.439 )
-
-[node name="CeillingLight" parent="." instance=ExtResource( 2 )]
-position = Vector2( 321.172, 113.523 )
-z_index = 1
-
-[node name="Desk" parent="." instance=ExtResource( 3 )]
-position = Vector2( 621, 479 )
-
-[node name="Ball" parent="." instance=ExtResource( 5 )]
-position = Vector2( 553.555, 350.633 )
-
-[node name="Bed" parent="." instance=ExtResource( 6 )]
-position = Vector2( 220.881, 516.297 )
-collision_layer = 1
-collision_mask = 5
-
-[node name="Window" parent="." instance=ExtResource( 7 )]
-position = Vector2( 218.249, 286.055 )
-
-[node name="GameConsole" parent="." instance=ExtResource( 9 )]
-position = Vector2( 692.754, 319.281 )
-collision_layer = 4
-collision_mask = 2
 
 [node name="Background" type="Sprite" parent="."]
 modulate = Color( 1, 1, 1, 0.490196 )
@@ -61,14 +37,42 @@ scale = Vector2( 0.991723, 0.592355 )
 z_index = -5
 texture = ExtResource( 8 )
 
-[node name="Bounds" type="StaticBody2D" parent="."]
+[node name="Objects" type="Node2D" parent="."]
+
+[node name="Dresser" parent="Objects" instance=ExtResource( 1 )]
+position = Vector2( 906.429, 404.439 )
+
+[node name="CeillingLight" parent="Objects" instance=ExtResource( 2 )]
+position = Vector2( 321.172, 113.523 )
+z_index = 1
+
+[node name="Desk" parent="Objects" instance=ExtResource( 3 )]
+position = Vector2( 621, 479 )
+
+[node name="Ball" parent="Objects" instance=ExtResource( 5 )]
+position = Vector2( 553.555, 350.633 )
+
+[node name="Bed" parent="Objects" instance=ExtResource( 6 )]
+position = Vector2( 220.881, 516.297 )
+collision_layer = 1
+collision_mask = 5
+
+[node name="Window" parent="Objects" instance=ExtResource( 7 )]
+position = Vector2( 218.249, 286.055 )
+
+[node name="GameConsole" parent="Objects" instance=ExtResource( 9 )]
+position = Vector2( 692.754, 319.281 )
+collision_layer = 4
+collision_mask = 2
+
+[node name="Bounds" type="StaticBody2D" parent="Objects"]
 collision_layer = 6
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bounds"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Objects/Bounds"]
 position = Vector2( 0, 1.33484 )
 polygon = PoolVector2Array( -0.747467, -1.93311, -1.89374, 580.646, 1016.96, 573.155, 1020.89, -0.3013, 1073.64, -1.42377, 1073.82, 678.083, -87.1414, 691.297, -87.0372, -75.5393, 1071.94, -78.9044, 1073.09, -0.834229, 1022.01, -0.886459 )
 
-[node name="TV" parent="." instance=ExtResource( 4 )]
+[node name="TV" parent="Objects" instance=ExtResource( 4 )]
 position = Vector2( 902.103, 156.23 )
 
 [node name="Timer" type="Timer" parent="."]
@@ -110,14 +114,15 @@ __meta__ = {
 }
 
 [node name="StartButton" type="LinkButton" parent="SpeechBubble"]
-margin_left = 360.418
-margin_top = 480.765
-margin_right = 718.418
-margin_bottom = 624.765
+margin_left = 217.875
+margin_top = 469.629
+margin_right = 1008.87
+margin_bottom = 613.629
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_color_hover = Color( 0.109804, 0.513726, 0.52549, 1 )
-text = "Began"
+custom_colors/font_color_hover = Color( 1, 0, 0.12549, 1 )
+text = "MAKE A MESS"
+underline = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }

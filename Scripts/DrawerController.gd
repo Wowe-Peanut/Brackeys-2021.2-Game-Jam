@@ -26,7 +26,7 @@ func populate(Contents):
 		pass
 	
 func _on_Drawer_input_event(viewport, event, shape_idx):
-	if event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT:
+	if event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT && get_owner().is_pickable():
 		if opened:
 			close()
 		else:

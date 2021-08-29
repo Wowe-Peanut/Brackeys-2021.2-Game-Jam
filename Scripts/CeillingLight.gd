@@ -56,7 +56,6 @@ func _on_CeillingLight_body_entered(body):
 		hits += 1
 		if hits >= 5:
 			explode()
-			#body.queue_free()
 		else:
 			randomize()
 			body.linear_velocity = Vector2(0, 0)

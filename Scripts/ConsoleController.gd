@@ -10,7 +10,7 @@ signal clicked
 func _ready():
 	#mode = RigidBody2D.MODE_STATIC
 	self.connect("clicked", Global, "_on_pickable_clicked")
-	tv = get_tree().get_root().get_node("Room/TV")
+	tv = get_tree().get_root().get_node("Room/Objects/TV")
 
 func _physics_process(delta):
 	if held:

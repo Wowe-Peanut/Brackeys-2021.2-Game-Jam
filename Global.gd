@@ -6,12 +6,10 @@ var held_object = null
 var MessyThings = 0
 
 func _ready():
-	AudioPlayer.play()
 	get_tree().change_scene("res://Menu.tscn")
 
 func UpMess():
 	MessyThings += 1
-	print(MessyThings)
 
 func GetMess():
 	return MessyThings
@@ -29,3 +27,6 @@ func _unhandled_input(event):
 func End():
 	get_tree().change_scene("res://EndScreen.tscn")
 	
+	
+func StartMusic():
+	AudioPlayer.play()
