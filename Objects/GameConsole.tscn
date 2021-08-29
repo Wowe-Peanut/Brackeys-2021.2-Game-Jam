@@ -22,6 +22,7 @@ scale = Vector2( 0.6, 0.6 )
 shape = SubResource( 1 )
 
 [node name="Wire" type="Line2D" parent="."]
+show_behind_parent = true
 points = PoolVector2Array( 615.042, 37.909 )
 width = 3.0
 default_color = Color( 0, 0, 0, 1 )

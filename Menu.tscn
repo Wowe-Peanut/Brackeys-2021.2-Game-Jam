@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://MenuController.gd" type="Script" id=1]
+[ext_resource path="res://Assets/DumbNSillyRegular-2OEyW.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Assets/CryingBaby.png" type="Texture" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 128
+font_data = ExtResource( 2 )
+
+[node name="Main Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="ColorRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+color = Color( 0.505882, 0.760784, 0.807843, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartButton" type="LinkButton" parent="."]
+margin_left = 41.4711
+margin_top = 239.35
+margin_right = 612.471
+margin_bottom = 352.35
+custom_fonts/font = SubResource( 1 )
+text = "Start Crying"
+underline = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BabyImage" type="TextureRect" parent="."]
+margin_left = 608.809
+margin_top = 28.5905
+margin_right = 1003.81
+margin_bottom = 540.59
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="StartButton" to="." method="_on_StartButton_pressed"]

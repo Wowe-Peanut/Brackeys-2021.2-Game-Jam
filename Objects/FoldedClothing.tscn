@@ -3,9 +3,8 @@
 [ext_resource path="res://Assets/clothing.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/FoldedClothing.gd" type="Script" id=2]
 
-
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 10, 5.70973 )
+extents = Vector2( 18.0473, 7.79345 )
 
 [node name="FoldedClothing" type="Area2D"]
 z_index = 3

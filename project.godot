@@ -11,12 +11,12 @@ config_version=4
 [application]
 
 config/name="TemperTantrum"
-run/main_scene="res://Objects/Room.tscn"
+run/main_scene="res://Global.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
-Global="*res://Objects/Global.tscn"
+Global="*res://Global.tscn"
 
 [debug]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Objects/Dresser.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/CeilingLight.tscn" type="PackedScene" id=2]
@@ -9,8 +9,24 @@
 [ext_resource path="res://Objects/Window.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/background_texture.png" type="Texture" id=8]
 [ext_resource path="res://Objects/GameConsole.tscn" type="PackedScene" id=9]
+[ext_resource path="res://RoomController.gd" type="Script" id=10]
+[ext_resource path="res://Assets/DumbNSillyRegular-2OEyW.ttf" type="DynamicFontData" id=11]
+[ext_resource path="res://Assets/SpeechBubble.png" type="Texture" id=12]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+font_data = ExtResource( 11 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 100
+font_data = ExtResource( 11 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 164
+font_data = ExtResource( 11 )
 
 [node name="Room" type="Node2D"]
+script = ExtResource( 10 )
 
 [node name="Dresser" parent="." instance=ExtResource( 1 )]
 position = Vector2( 906.429, 404.439 )
@@ -21,9 +37,6 @@ z_index = 1
 
 [node name="Desk" parent="." instance=ExtResource( 3 )]
 position = Vector2( 621, 479 )
-
-[node name="TV" parent="." instance=ExtResource( 4 )]
-position = Vector2( 902.103, 156.23 )
 
 [node name="Ball" parent="." instance=ExtResource( 5 )]
 position = Vector2( 553.555, 350.633 )
@@ -54,3 +67,59 @@ collision_layer = 6
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bounds"]
 position = Vector2( 0, 1.33484 )
 polygon = PoolVector2Array( -0.747467, -1.93311, -1.89374, 580.646, 1016.96, 573.155, 1020.89, -0.3013, 1073.64, -1.42377, 1073.82, 678.083, -87.1414, 691.297, -87.0372, -75.5393, 1071.94, -78.9044, 1073.09, -0.834229, 1022.01, -0.886459 )
+
+[node name="TV" parent="." instance=ExtResource( 4 )]
+position = Vector2( 902.103, 156.23 )
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="TimerDisplay" type="Label" parent="."]
+margin_left = 18.3431
+margin_top = 17.2426
+margin_right = 135.343
+margin_bottom = 75.2426
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SpeechBubble" type="TextureRect" parent="."]
+margin_left = 9.28333
+margin_top = 121.3
+margin_right = 1289.28
+margin_bottom = 1387.3
+rect_scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Speech" type="Label" parent="SpeechBubble"]
+margin_left = 197.952
+margin_top = 199.102
+margin_right = 981.952
+margin_bottom = 469.102
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "\"If your room isn't 
+clean when I come
+in you're grounded!!!\""
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartButton" type="LinkButton" parent="SpeechBubble"]
+margin_left = 360.418
+margin_top = 480.765
+margin_right = 718.418
+margin_bottom = 624.765
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0.109804, 0.513726, 0.52549, 1 )
+text = "Began"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="SpeechBubble/StartButton" to="." method="_on_StartButton_pressed"]

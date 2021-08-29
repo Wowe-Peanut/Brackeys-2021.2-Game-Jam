@@ -6,13 +6,16 @@ var held_object = null
 var MessyThings = 0
 
 func _ready():
-	#AudioPlayer.play()
+	AudioPlayer.play()
 	get_tree().change_scene("res://Menu.tscn")
 
 func UpMess():
 	MessyThings += 1
 	print(MessyThings)
- 
+
+func GetMess():
+	return MessyThings
+
 func _on_pickable_clicked(object):
 	if !held_object:
 		held_object = object
@@ -23,6 +26,6 @@ func _unhandled_input(event):
 		held_object.drop(Input.get_last_mouse_speed())
 		held_object = null
 
-
-
+func End():
+	get_tree().change_scene("res://EndScreen.tscn")
 	

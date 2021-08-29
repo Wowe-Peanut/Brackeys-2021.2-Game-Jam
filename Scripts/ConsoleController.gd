@@ -15,11 +15,15 @@ func _ready():
 func _physics_process(delta):
 	if held:
 		global_transform.origin = get_global_mouse_position() + offset
-	if not tv_broken and global_position.distance_to(tv.global_position) > 400:
-		tv.break_self()
-		$Wire.clear_points()
-		tv_broken = true
-			
+	if not tv_broken and global_position.distance_to(tv.global_position) > 600:
+		break_off()
+		
+func break_off():
+	tv.break_self()
+	$Wire.clear_points()
+	tv_broken = true
+	Global.UpMess()	
+	
 func _process(delta):
 	$Wire.global_rotation = 0
 	if not tv_broken:

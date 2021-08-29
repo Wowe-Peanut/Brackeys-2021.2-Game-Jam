@@ -1,6 +1,7 @@
 extends Area2D
 
 onready var sprite = $Sprite
+onready var hitbox = $Hitbox
 
 var on = true
 var exploded = false
@@ -47,6 +48,7 @@ func flicker_uncontrollably():
 func explode():
 	on = false
 	sprite.region_rect.position.x = 41
+	hitbox.set_deferred("disabled", true)
 	Global.UpMess()
 	
 func _on_CeillingLight_body_entered(body):
@@ -54,8 +56,7 @@ func _on_CeillingLight_body_entered(body):
 		hits += 1
 		if hits >= 5:
 			explode()
-			body.queue_free()
-			Global.UpMess()
+			#body.queue_free()
 		else:
 			randomize()
 			body.linear_velocity = Vector2(0, 0)
