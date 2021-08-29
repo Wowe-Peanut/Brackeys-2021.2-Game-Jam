@@ -8,7 +8,8 @@ var clicks = 0 #How many times its been turned on/off
 var hits = 0 #How many things have been thrown at it
 
 
-
+func _ready():
+	pass
 
 func _input_event(viewport, event, shape_idx):
 	if Input.is_action_just_pressed("click"):
@@ -59,5 +60,6 @@ func _on_CeillingLight_body_entered(body):
 			randomize()
 			body.linear_velocity = Vector2(0, 0)
 			body.apply_central_impulse(Vector2(1000, 0))
+			body.apply_torque_impulse(1000.0)
 
 

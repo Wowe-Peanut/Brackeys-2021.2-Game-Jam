@@ -37,12 +37,11 @@ collision_mask = 5
 position = Vector2( 218.249, 286.055 )
 
 [node name="GameConsole" parent="." instance=ExtResource( 9 )]
-position = Vector2( 637.518, 231.973 )
+position = Vector2( 692.754, 319.281 )
 collision_layer = 4
 collision_mask = 2
 
 [node name="Background" type="Sprite" parent="."]
-visible = false
 modulate = Color( 1, 1, 1, 0.490196 )
 position = Vector2( 506.563, 304.196 )
 scale = Vector2( 0.991723, 0.592355 )

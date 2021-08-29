@@ -39,6 +39,7 @@ func drop(impulse=Vector2.ZERO):
 	if held:
 		mode = RigidBody2D.MODE_RIGID
 		apply_central_impulse(impulse)
+		apply_torque_impulse(impulse.length()*10)
 		held = false
 
 

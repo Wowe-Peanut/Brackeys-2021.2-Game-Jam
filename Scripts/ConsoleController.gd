@@ -15,10 +15,10 @@ func _ready():
 func _physics_process(delta):
 	if held:
 		global_transform.origin = get_global_mouse_position() + offset
-		if not tv_broken and global_position.distance_to(tv.global_position) > 500:
-			tv.break_self()
-			$Wire.clear_points()
-			tv_broken = true
+	if not tv_broken and global_position.distance_to(tv.global_position) > 400:
+		tv.break_self()
+		$Wire.clear_points()
+		tv_broken = true
 			
 func _process(delta):
 	$Wire.global_rotation = 0
@@ -36,6 +36,7 @@ func drop(impulse=Vector2.ZERO):
 	if held:
 		mode = RigidBody2D.MODE_RIGID
 		apply_central_impulse(impulse)
+		apply_torque_impulse(impulse.length()*10)
 		held = false
 
 func _on_GameConsole_input_event(viewport, event, shape_idx):

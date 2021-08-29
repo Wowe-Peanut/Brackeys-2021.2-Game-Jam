@@ -4,7 +4,7 @@
 [ext_resource path="res://Scripts/WindowController.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 259, 173 )
+extents = Vector2( 213.699, 145.299 )
 
 [node name="Window" type="Area2D"]
 scale = Vector2( 0.6, 0.6 )
